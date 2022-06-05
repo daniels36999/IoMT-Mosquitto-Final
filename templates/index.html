@@ -307,21 +307,40 @@
                                 <div class="contact-form wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
                                     <div id="message"></div>
                                     <form action="scripts/contact.php" class="form-horizontal contact-1" role="form" name="contactform" id="contactform">
-                                <!--         <div class="form-group">
-                                            <div class="col-sm-6"> -->
-                                                <input type="text" class="form-control" name="name" id="name" placeholder="Ingrese su Nombre">
-                                            <!-- </div>
-                                            <div class="col-sm-6"> -->
-                                                <input type="text" class="form-control" name="email" id="email" placeholder="Ingrese su Apellido">
-                                     <!--        </div>
-                                        </div> -->
-                                    <!--     <div class="form-group"> -->
-                                       <!--      <div class="col-sm-12"> -->
-									   
-                                                <input type="subject" class="form-control" id="subject" placeholder="Seleccione el Curso">
-                                          <!--   </div> -->
-                                       <!--  </div> -->
-                                                <button type="submit" class="button2" >MOSTRAR HISTORIAL</button>
+										<input type="text" class="form-control" name="name" id="nombre" placeholder="Ingrese su Nombre">
+										<input type="text" class="form-control" name="email" id="apellido" placeholder="Ingrese su Apellido"><br>
+										<div class="centrar2">
+										<select id="curso" class="form-control">
+											<option disabled selected=""><h3> Seleccione </h3></option>
+											<option> Inicial 1 </option>
+											<option> Inicial 2 </option>
+											<option> Primer año de Educacion Básica  </option>
+											<option> Segundo año de Educacion Básica </option>
+											<option> Tercer año de Educacion Básica </option>
+											<option> Cuarto año de Educacion Básica </option>
+											<option> Quinto año de Educacion Básica </option>
+											<option> Sexto año de Educacion Básica </option>
+											<option> Septimo año de Educacion Básica </option>
+											<option> Octavo año de Educacion Básica </option>
+											<option> Noveno año de Educacion Básica </option>
+											<option> Décimo año de Educacion Básica </option>
+											<option> Primer año de Bachillerato </option>
+											<option> Segundo año de Bachillerato </option>
+											<option> Tercer año de Bachillerato </option>
+											<option> Alumnos de Básica Acelerado </option>
+											<option> Personal Administrativo </option>
+											<option> Docentes </option>
+											<option> Otros </option>
+										</select></div><br><br><br>
+										<button type="submit" id="MOSTRAR1"class="button2" >MOSTRAR HISTORIAL</button><br><br>
+										<div   class="URL1">
+												<hr/>
+												<h2>--</h2>
+											</div>
+											<div   class="MuestraTexto">
+												<hr/>
+												<h2>HISTORIAL</h2>
+											</div>
 												
 									</form>
                                 </div>
@@ -541,6 +560,37 @@
         <!-- Custom JavaScript-->
         <script src="/static/js/main.js"></script>
 		<script src="/static/js/mqtt.js"></script>
+		<script>
+		
+	<!-- MOSTRAR TABLAS-->	
+$(function() 
+{
+$("#MOSTRAR1").click( function()
+{
+   var GITURL = "https://raw.githubusercontent.com/daniels36999/IoMT-BD/main/Datos%20Almacenados/";
+   var NOMBRE1 =$("#nombre").val();
+   var APELLIDO1 =$("#apellido").val();
+   var CURSO1 = $("#curso").val();
+   
+   var TXT_URL = GITURL+CURSO1+"/"+NOMBRE1+"%20"+APELLIDO1+".html?raw=true";
+   
+   $(".URL1").html(TXT_URL);
+
+    $.ajax
+    (
+    	{
+        	url : TXT_URL,
+			dataType: "text",
+			success : function (data) 
+			{
+            	$(".MuestraTexto").html("<pre>"+data+"</pre>");
+			}
+		}
+	);
+   });
+});
+
+</script>
 		
     </body>
 
