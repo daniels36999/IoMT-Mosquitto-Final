@@ -9,6 +9,11 @@
 
         <title>GreenFair</title>
 		
+		<!-- LIBRERIAS EXPORTAR-->
+		<meta name="viewport"
+			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		
 		<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript">		
 		</script>
@@ -506,7 +511,21 @@
 
 		</script>
 
-
+                <!-- SCRIPT PARA EXPORTAR -->
+                <script>
+                    const $btnExportar = document.querySelector("#btnExportar"),
+                        $tabla = document.querySelector("#tabla");
+                    $btnExportar.addEventListener("click", function() {
+                        let tableExport = new TableExport($tabla, {
+                            exportButtons: false, // No queremos botones
+                            filename: "Reporte de prueba", //Nombre del archivo de Excel
+                            sheetname: "Reporte de prueba", //Título de la hoja
+                        });
+                        let datos = tableExport.getExportData();
+                        let preferenciasDocumento = datos.tabla.xlsx;
+                        tableExport.export2file(preferenciasDocumento.data, preferenciasDocumento.mimeType, preferenciasDocumento.filename, preferenciasDocumento.fileExtension, preferenciasDocumento.merges, preferenciasDocumento.RTL, preferenciasDocumento.sheetname);
+                    });
+                </script>
 
 
 
