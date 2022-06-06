@@ -910,8 +910,8 @@ input#email {
 .text_area textarea,
 .form-inline .form-control,
 input#name,
-input#email,
-input#subject{
+input#apellido,
+input#curso{
     border-radius: 0px;
     margin-bottom: 20px;
     border: 0px;
