@@ -7,12 +7,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-        <title>GreenFair</title>
+        <title>IoMT</title>
 		
 		<!-- LIBRERIAS EXPORTAR-->
 		<meta name="viewport"
 			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+		<link rel="stylesheet" type="text/css"href="/static/css/graficas_iot.css">
+		<style type="text/css">#oli  {display: none;}</style>
+
 		
 		<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript">		
@@ -511,23 +516,10 @@
 
 		</script>
 
-                <!-- SCRIPT PARA EXPORTAR -->
-                <script>
-                    const $btnExportar = document.querySelector("#btnExportar"),
-                        $tabla = document.querySelector("#tabla");
-                    $btnExportar.addEventListener("click", function() {
-                        let tableExport = new TableExport($tabla, {
-                            exportButtons: false, // No queremos botones
-                            filename: "Reporte de prueba", //Nombre del archivo de Excel
-                            sheetname: "Reporte de prueba", //Título de la hoja
-                        });
-                        let datos = tableExport.getExportData();
-                        let preferenciasDocumento = datos.tabla.xlsx;
-                        tableExport.export2file(preferenciasDocumento.data, preferenciasDocumento.mimeType, preferenciasDocumento.filename, preferenciasDocumento.fileExtension, preferenciasDocumento.merges, preferenciasDocumento.RTL, preferenciasDocumento.sheetname);
-                    });
-                </script>
 
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js'></script>
+		<script  src="/static/js/graficas_iot.js"></script>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>-->
