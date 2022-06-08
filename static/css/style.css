@@ -283,8 +283,8 @@ input: -webkit-autofill:focus {
 /*Slider*/
 
 #slider {
-    /* min-height: 490px; */
-	 height: 490px;
+    min-height: 490px;
+	/*  height: 490px; */
 }
 #slider .slider_text {
     padding-bottom: 13%;
