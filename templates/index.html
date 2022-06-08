@@ -316,7 +316,7 @@
                     <div class="centrar12">
                         <div class="msg">
                             <div class="msg_title">
-                                <h5>INGRESE SUS DATOS</h5>
+                                <h5>HAGA CLIC EL SIGUIENTE BOTÓN</h5>
                             </div>
                             <div class="form_area">
                                 <!-- CONTACT FORM -->
@@ -324,34 +324,10 @@
                                 <div class="contact-form wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
                                     <div id="message"></div>
                                    
-										<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese su Nombre"><br>
-										<input type="text" class="form-control" name="apellido" id="apellido" placeholder="Ingrese su Apellido"><br>
-										<div class="centrar2">
-										<select id="curso" class="form-control" >
-											<option disabled selected=""><h3> Seleccione </h3></option>
-											<option> Inicial 1 </option>
-											<option> Inicial 2 </option>
-											<option> Primer año de Educacion Básica  </option>
-											<option> Segundo año de Educacion Básica </option>
-											<option> Tercer año de Educacion Básica </option>
-											<option> Cuarto año de Educacion Básica </option>
-											<option> Quinto año de Educacion Básica </option>
-											<option> Sexto año de Educacion Básica </option>
-											<option> Septimo año de Educacion Básica </option>
-											<option> Octavo año de Educacion Básica </option>
-											<option> Noveno año de Educacion Básica </option>
-											<option> Décimo año de Educacion Básica </option>
-											<option> Primer año de Bachillerato </option>
-											<option> Segundo año de Bachillerato </option>
-											<option> Tercer año de Bachillerato </option>
-											<option> Alumnos de Básica Acelerado </option>
-											<option> Personal Administrativo </option>
-											<option> Docentes </option>
-											<option> Otros </option>
-										</select></div><br><br><br>
+										<br>
 										
 										<h2  >
-											<button onclick=location.href="#footer" type="button" class="button2" id="MOSTRAR1"> DESCARGAR </button>
+											<button onclick=location.href="https://daniels36999.github.io/" type="button" class="button2" id="MOSTRAR1"> REPORTES </button>
 
 										</h2>
 
@@ -474,47 +450,12 @@
         </section>
         <!--End of footer-->
 	<!-- MOSTRAR TABLAS-->	
-	
-	
 
-		<div class="MuestraTexto">
-			<hr/>
-			<h3>HISTORIAL</h3>
-		</div>
 			
         <!--Scroll to top-->
         <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
         <!--End of Scroll to top-->
-			
-		<script>
-		$(function() 
-		{
-		$("#MOSTRAR1").click( function()
-		{
-		   //var GITURL = "https://raw.githubusercontent.com/daniels36999/IoMT-BD/main/Datos%20Almacenados/";
-		   var GITURL ="https://raw.githubusercontent.com/daniels36999/IoMT-BD-Test/main/Datos%20Almacenados/";
-		   var NOMBRE1 =$("#nombre").val();
-		   var APELLIDO1 =$("#apellido").val();
-		   var CURSO1 = $("#curso").val();
-		   
-		   //var TXT_URL = GITURL+CURSO1+"/"+NOMBRE1+"%20"+APELLIDO1+".html?raw=true";
-			var TXT_URL = GITURL+CURSO1+"/"+NOMBRE1+"%20"+APELLIDO1+".html?raw=true";
-			console.log("MOSTRANDO HISTORIAL")
-			$.ajax
-			(
-				{
-					url : TXT_URL,
-					dataType: "text",
-					success : function (data) 
-					{
-						$(".MuestraTexto").html("<pre>"+data+"</pre>");
-					}
-				}
-			);
-		   });
-		});
-
-		</script>
+		
 
 <!-- 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
