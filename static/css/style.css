@@ -283,7 +283,8 @@ input: -webkit-autofill:focus {
 /*Slider*/
 
 #slider {
-    min-height: 490px;
+	background: url(../img/img11.jpg) no-repeat scroll top center / cover;
+    /* min-height: 490px; */
 	/*  height: 490px; */
 }
 #slider .slider_text {
